@@ -39,6 +39,7 @@ public class Login extends JFrame implements ActionListener{
         
         cardIDTextField = new JTextField();
         cardIDTextField.setBounds(300,150,200,30);
+        cardIDTextField.setFont(new Font("Arial", Font.BOLD, 16));
         add(cardIDTextField);
         
         //Password text
@@ -49,6 +50,7 @@ public class Login extends JFrame implements ActionListener{
         
         pinTextField = new JPasswordField();
         pinTextField.setBounds(300,200,200,30);
+        pinTextField.setFont(new Font("Arial", Font.BOLD, 16));
         add(pinTextField);
         
         //SING IN BUTTON
