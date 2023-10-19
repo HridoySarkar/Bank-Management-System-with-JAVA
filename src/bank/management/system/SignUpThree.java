@@ -23,7 +23,7 @@ public class SignUpThree extends JFrame {
         add(head);
         
         JLabel accountType = new JLabel("Account Type:");
-        accountType.setFont(new Font("Raleway",Font.BOLD,20));
+        accountType.setFont(new Font("Raleway",Font.BOLD,22));
         accountType.setBounds(100,140,200,40);
         add(accountType);
         
@@ -58,6 +58,14 @@ public class SignUpThree extends JFrame {
         accountTypeGroup.add(fdAccount);
         accountTypeGroup.add(currentAccount);
         accountTypeGroup.add(reDepositAccount);
+        
+        
+        JLabel cardNumLabel = new JLabel("Card Number:");
+        cardNumLabel.setFont(new Font("Raleway",Font.BOLD,22));
+        cardNumLabel.setBackground(Color.white);
+        cardNumLabel.setBounds(100,280,250,30);
+        add(cardNumLabel);
+        
         
         
         getContentPane().setBackground(Color.white);

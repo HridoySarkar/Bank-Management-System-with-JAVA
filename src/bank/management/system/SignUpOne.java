@@ -15,13 +15,14 @@ public class SignUpOne extends JFrame implements ActionListener{
     JButton next;
     JRadioButton male,female,married,single,other;
     JDateChooser dateChooser;
+    JLabel formNo;
     
     SignUpOne(){
         setLayout(null);
         
         Random ran = new Random();
         random = Math.abs((ran.nextLong() % 9000l) + 1000);
-        JLabel formNo = new JLabel("APPLICATION FORM NO: "+ random);
+        formNo = new JLabel("APPLICATION FORM NO: "+ random);
         formNo.setFont(new Font("Raleway", Font.BOLD, 38));
         formNo.setBounds(140,20,600,40);
         add(formNo);
