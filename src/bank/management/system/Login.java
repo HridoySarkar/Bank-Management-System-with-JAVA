@@ -2,6 +2,7 @@ package bank.management.system;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.*;
 
 /**
  *
@@ -96,6 +97,23 @@ public class Login extends JFrame implements ActionListener{
             cardIDTextField.setText("");
             pinTextField.setText("");
         }else if(ae.getSource() == logIn){
+            Conn conn = new Conn();
+            String cardNumber = cardIDTextField.getText();
+            String pinNumber = pinTextField.getText();
+            String query = "select * from login where cardnumber = `"+cardNumber+"` and pin = `"+pinNumber+"`";
+            
+            try{
+                ResultSet rs = conn.s.executeQuery(query);
+                if(rs.next()){
+                    setVisible(false);
+                    new Transactions().setVisible(true);
+                }else{
+                    JOptionPane.showMessageDialog(null, "Incorrect Card Number");
+                }
+            }catch(Exception ex){
+            System.out.print(ex);
+        }
+            
             
         }else if(ae.getSource() == singUp){
             setVisible(false);

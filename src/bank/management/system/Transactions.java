@@ -1,5 +1,7 @@
 package bank.management.system;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -9,9 +11,13 @@ import javax.swing.JLabel;
  *
  * @author Hridoy
  */
-public class Transactions extends JFrame{
-
+public class Transactions extends JFrame implements ActionListener{
+    
+    String formNo;
+    JButton deposit,balance,pinChange,statement,mCash,withdrawl,remittance,exit;
+    
     Transactions(){
+        
         setLayout(null);
         
         ImageIcon icon1= new ImageIcon(ClassLoader.getSystemResource("icons/atm.jpg"));
@@ -30,37 +36,55 @@ public class Transactions extends JFrame{
         
         
         //buttons left side
-        JButton deposit = new JButton("Deposit");
+        deposit = new JButton("Deposit");
         deposit.setBounds(150,318,130,30);
+        deposit.addActionListener(this);
         deposit.setFont(new Font("Raleway",Font.BOLD,12));
         image.add(deposit);
         
-        JButton withdral = new JButton("Cash Withdral");
-        withdral.setBounds(150,350,130,30);
-        withdral.setFont(new Font("Raleway",Font.BOLD,12));
-        image.add(withdral);
+        withdrawl = new JButton("Cash Withdrawl");
+        withdrawl.setBounds(150,350,130,30);
+        withdrawl.addActionListener(this);
+        withdrawl.setFont(new Font("Raleway",Font.BOLD,12));
+        image.add(withdrawl);
         
-        JButton mCash = new JButton("M-Cash");
+        mCash = new JButton("M-Cash");
         mCash.setBounds(150,382,130,30);
+        mCash.addActionListener(this);
         mCash.setFont(new Font("Raleway",Font.BOLD,12));
         image.add(mCash);
         
-        JButton remittance = new JButton("Remittance");
+        remittance = new JButton("Remittance");
         remittance.setBounds(150,414,130,30);
+        remittance.addActionListener(this);
         remittance.setFont(new Font("Raleway",Font.BOLD,12));
         image.add(remittance);
         
         
         //buttons right side
-        JButton balance = new JButton("Balance Check");
+        balance = new JButton("Balance Check");
         balance.setBounds(355,318,130,30);
+        balance.addActionListener(this);
         balance.setFont(new Font("Raleway",Font.BOLD,12));
         image.add(balance);
         
-        JButton statement = new JButton("Statement");
+        statement = new JButton("Statement");
         statement.setBounds(355,350,130,30);
+        statement.addActionListener(this);
         statement.setFont(new Font("Raleway",Font.BOLD,12));
         image.add(statement);
+        
+        pinChange = new JButton("PIN Change");
+        pinChange.setBounds(355,382,130,30);
+        pinChange.addActionListener(this);
+        pinChange.setFont(new Font("Raleway",Font.BOLD,12));
+        image.add(pinChange);
+        
+        exit = new JButton("Exit");
+        exit.setBounds(355,414,130,30);
+        exit.addActionListener(this);
+        exit.setFont(new Font("Raleway",Font.BOLD,12));
+        image.add(exit);
         
         
         
@@ -71,6 +95,12 @@ public class Transactions extends JFrame{
         setLocation(300,20);
         setVisible(true);
         setTitle("Transactions");
+    }
+    
+    public void actionPerformed(ActionEvent ae){
+        if(ae.getSource() == exit){
+            System.exit(0);
+        }
     }
     
     public static void main(String args[]) {
