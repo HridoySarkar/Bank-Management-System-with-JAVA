@@ -2,10 +2,7 @@ package bank.management.system;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.*;
 
 /**
  *
@@ -17,7 +14,7 @@ public class Transactions extends JFrame implements ActionListener{
     JButton deposit,balance,pinChange,statement,mCash,withdrawl,remittance,exit;
     
     Transactions(){
-        
+        //set null
         setLayout(null);
         
         ImageIcon icon1= new ImageIcon(ClassLoader.getSystemResource("icons/atm.jpg"));
