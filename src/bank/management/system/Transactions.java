@@ -12,6 +12,7 @@ public class Transactions extends JFrame implements ActionListener{
     
     String formNo;
     JButton deposit,balance,pinChange,statement,mCash,withdrawl,remittance,exit;
+    JLabel image;
     
     Transactions(){
         //set null
@@ -21,7 +22,7 @@ public class Transactions extends JFrame implements ActionListener{
         Image icon2 = icon1.getImage().getScaledInstance(850, 850, WIDTH);
         ImageIcon icon = new ImageIcon(icon2);
         
-        JLabel image = new JLabel(icon);
+        image = new JLabel(icon);
         image.setBounds(0,0,850,700);
         add(image);
         
@@ -82,8 +83,6 @@ public class Transactions extends JFrame implements ActionListener{
         exit.addActionListener(this);
         exit.setFont(new Font("Raleway",Font.BOLD,12));
         image.add(exit);
-        
-        
         
         
         
