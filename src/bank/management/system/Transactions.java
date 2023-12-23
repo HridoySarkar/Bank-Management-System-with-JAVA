@@ -26,7 +26,7 @@ public class Transactions extends JFrame implements ActionListener{
         image.setBounds(0,0,850,700);
         add(image);
         
-        JLabel headText = new JLabel("Please select your Transaction");
+        JLabel headText = new JLabel("Please select your Transaction below");
         headText.setBounds(200,200,500,40);
         headText.setFont(new Font("Raleway",Font.BOLD,16));
         headText.setForeground(Color.WHITE);
@@ -72,7 +72,7 @@ public class Transactions extends JFrame implements ActionListener{
         statement.setFont(new Font("Raleway",Font.BOLD,12));
         image.add(statement);
         
-        pinChange = new JButton("PIN Change");
+        pinChange = new JButton("PIN reset");
         pinChange.setBounds(355,382,130,30);
         pinChange.addActionListener(this);
         pinChange.setFont(new Font("Raleway",Font.BOLD,12));
